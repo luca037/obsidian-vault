@@ -86,48 +86,46 @@ Adding device 00008110-0123A456B789D012
 Now you can run `AltServer` with:
 
 ```shell
-sudo ALTSERVER_ANISETTE_SERVER=http://127.0.0.1:6969 ./AltServer-aarch64
+ALTSERVER_ANISETTE_SERVER=http://127.0.0.1:6969 ./AltServer-aarch64
 ```
 
 If you have already installed `AltStore`, then you should be able to refresh through Wifi.
 
 ### Auto-start
 
-Create the file `/etc/init.d/altserver-wifi` and add the following lines:
+First you need to modify your `sudoers` file (with `sudo visudo`) by adding:
 
 ```shell
-#!/bin/bash
-### BEGIN INIT INFO
-# Provides: MyService
-# Required-Start:    $all
-# Required-Stop:
-# Default-Start:     5
-# Default-Stop:      6
-# Short-Description: Start altserver wifi mode
-### END INIT INFO
-
-echo "Starting"
-anisette-server-aarch64 -n 127.0.0.1 -p 6969 &
-aarch64-linux-netmuxd &
-ALTSERVER_ANISETTE_SERVER=http://127.0.0.1:6969 AltServer-aarch64 &
+<your usr hame> ALL=(ALL) NOPASSWD: /usr/bin/aarch64-linux-netmuxd
 ```
 
-Then run the following commands:
+Finally you need to modify your `.bashrc` by adding the following lines:
 
 ```shell
-# Make executable
-sudo chmod +x /etc/init.d/altserver-services
+if pgrep -f "aarch64-linux-netmuxd" > /dev/null; then
+	echo "aarch64-linux-netmuxd is already running."
+else
+	sudo aarch64-linux-netmuxd \
+	> $HOME/Logs/netmuxd.txt 2>&1 &
+fi
 
-# Enable for startup
-sudo update-rc.d altserver-services defaults
+if pgrep -f "anisette-server-aarch64" > /dev/null; then
+	echo "anisette-server-aarch64 is already running."
+else
+	anisette-server-aarch64 -n 127.0.0.1 -p 6969 \
+	> $HOME/Logs/anisette.txt 2>&1 &
+fi
 
-# Start service
-sudo service altserver-services start
-
-# Check status
-sudo service altserver-services status
+if pgrep -f "AltServer-aarch64" > /dev/null; then
+	echo "AltServer-aarch64 is already running."
+else
+	ALTSERVER_ANISETTE_SERVER=http://127.0.0.1:6969 \
+	AltServer-aarch64 \
+	> $HOME/Logs/altserver.txt 2>&1 &
+fi
 ```
 
+To apply the changes you can `source .bashrc` and everything should work.
 ### References links:
 - [Main reference](https://gist.github.com/jschiefner/95a22d7f4803e7ad32a95b0f3aa655dc)
 - Original reddit posts:

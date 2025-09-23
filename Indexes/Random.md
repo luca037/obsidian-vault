@@ -1,2 +1,2 @@
-- [[AI Answers]]: answer and questions.
-- [[AltServer]]: how to refresh apps through Wifi.
+- [[AI Answers]]: answer and questions (used for the exam).
+- [[AltServer Wifi]]: how to refresh apps through Wifi.

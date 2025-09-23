@@ -8,5 +8,6 @@
   },
   "showLineNumber": false,
   "readableLineLength": true,
-  "autoPairBrackets": false
+  "autoPairBrackets": false,
+  "alwaysUpdateLinks": true
 }
