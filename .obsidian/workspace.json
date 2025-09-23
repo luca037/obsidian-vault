@@ -1,0 +1,198 @@
+{
+  "main": {
+    "id": "39a77775b4e3eeac",
+    "type": "split",
+    "children": [
+      {
+        "id": "cfc6c3f77083f47e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9244cfe5957581c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Linux/Random.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Random"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9b7b066184b76a70",
+    "type": "split",
+    "children": [
+      {
+        "id": "d88ec57505758be0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "69ef370d772cbd15",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8ed56d9fb9a4babf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "83d58daea50a3994",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 262.5
+  },
+  "right": {
+    "id": "2f9cb34614a1ef0d",
+    "type": "split",
+    "children": [
+      {
+        "id": "cea4fa91bbd3ae7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c57881c74b71dbf4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Coding/Python/Basic Stuff.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Basic Stuff"
+            }
+          },
+          {
+            "id": "5735697c7631afe5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Coding/Python/Basic Stuff.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Basic Stuff"
+            }
+          },
+          {
+            "id": "888893898dbee528",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "50ff025fa7cbb390",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "9244cfe5957581c6",
+  "lastOpenFiles": [
+    "Indexes/Linux.md",
+    "Notes/Linux/Random.md",
+    "Indexes/Python.md",
+    "Notes/Coding/Python/Keras lib.md",
+    "Notes/Linux",
+    "Indexes/Guitar.md",
+    "Notes/Guitar/Introduction.md",
+    "Indexes/Random.md",
+    "Notes/Random/AltServer.md",
+    "Notes/Coding/Python/Basic Stuff.md",
+    "Notes/Random/AI Answers.md",
+    "Notes/Coding/VIM.md",
+    "Notes/Random",
+    "Welcome.md",
+    "Indexes",
+    "Notes",
+    "Coding/Python/Untitled.base",
+    "Coding/C",
+    "Notes/Coding",
+    "Notes/Guitar",
+    "Untitled.canvas",
+    "Notes/Coding/Python"
+  ]
+}

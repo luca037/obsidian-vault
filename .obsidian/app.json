@@ -1,0 +1,12 @@
+{
+  "vimMode": true,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showLineNumber": false,
+  "readableLineLength": true,
+  "autoPairBrackets": false
+}
