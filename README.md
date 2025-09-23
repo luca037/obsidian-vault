@@ -1,1 +1,1 @@
-# obsidian-void
+# obsidian-vault
