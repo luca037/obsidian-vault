@@ -7,6 +7,7 @@ First of all you need to activate Wifi-sync option on your iDevice. To do that y
 ### Pre-requisites
 
 Required packages:
+
 ```shell
 sudo apt install -y \
   libavahi-compat-libdnssd-dev \
@@ -22,8 +23,10 @@ sudo apt install -y \
 ```
 
 Build from source the following packages:
+
 1. [libimobiledevice-glue](https://github.com/libimobiledevice/libimobiledevice-glue#debian--ubuntu-linux)
 2. [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice#debian--ubuntu-linux)
+
 This installs executables such as `idevicepair` and `ideviceinfo`. We can use those later to verify if our wireless connection to the idevice is working properly.
 
 Install [rustup](https://rustup.rs/), then run:

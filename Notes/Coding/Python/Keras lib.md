@@ -1,6 +1,4 @@
-# Introduction to Keras
-
-## Define train-validation-test set
+# Define train-validation-test set
 
 This is useful for multi-classification tasks. Consider that you have a directory structured as follows:
 
@@ -42,11 +40,9 @@ def create_datasets():
     )
 
     return train_ds, val_ds, test_ds
- 
  ```
 
-
-## Evaluate a model
+# Evaluate a model
 
 Consider a (multi-)classification task. Define a function that plots the accuracy and loss over epochs:
 
@@ -125,7 +121,7 @@ evalutate_model(model, test_ds, history)
 plot_confusion_matrix(model, test_ds, CLASS_NAMES)
 ```
 
-## Transfer Learning + Fine-tuning
+# Transfer Learning & Fine-tuning
 
 Consider that we want to fine-tune a pre-trained `EfficientNetB0`, which is a CNN. Consider a multi-classification task.
 
