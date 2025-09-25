@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Random/AltServer Wifi.md",
+                "file": "Notes/Coding/VIM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AltServer Wifi"
+              "title": "VIM"
             }
           }
         ]
@@ -156,8 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,13 +171,13 @@
   },
   "active": "9244cfe5957581c6",
   "lastOpenFiles": [
+    "Notes/Random/AltServer Wifi.md",
     "Notes/Coding/Python/Keras lib.md",
     "Notes/Coding/Python/PyTorch Lightning Lib.md",
     "Indexes/Python.md",
     "Notes/Coding/VIM.md",
     "README.md",
     "Welcome.md",
-    "Notes/Random/AltServer Wifi.md",
     "Notes/Random/AI Answers.md",
     "Notes/Linux/Random.md",
     "Notes/Guitar/Introduction.md",
