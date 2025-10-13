@@ -65,7 +65,7 @@ To **create a package** inside your workspace directory:
 ```shell
 ros2 pkg create \
 --build-type ament_cmake \
---license Apache-2.0 <package_name>
+--license Apache-2.0 cpp_pubsub
 ```
 
 To **build a package**:
@@ -98,7 +98,7 @@ A node may publish data to any number of topics and simultaneously have subscrip
 
 # Simple Publisher and Subscriber 
 
-We start by writing the `minimal_publisher.cpp` inside the `ws/src/pkg/src/` directory.
+We start by writing the `minimal_publisher.cpp` inside the `ws/src/cpp_pubsub/src/` directory.
 
 ```cpp
 #include <chrono>
@@ -323,7 +323,7 @@ rosdep install -i --from-path src --rosdistro jazzy -y
 Compile with:
 
 ```shell
-colcon build --packages-select project_dir_name
+colcon build --packages-select cpp_pubsub
 ```
 
 To execute, first we open a new terminal (still in `ws` directory) and we
@@ -336,13 +336,13 @@ run
 In one terminal we run the publisher:
 
 ```shell
-ros2 run proj_dir_name talker
+ros2 run cpp_pubsub talker
 ```
 
 In the other one we run the listener:
 
 ```shell
-ros2 run proj_dir_name listener
+ros2 run cpp_pubsub listener
 ```
 
 ... and we're done :)
