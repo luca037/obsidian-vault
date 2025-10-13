@@ -9,5 +9,6 @@
   "showLineNumber": false,
   "readableLineLength": true,
   "autoPairBrackets": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "Attachments"
 }

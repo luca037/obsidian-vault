@@ -1,5 +1,28 @@
 Here I just want to report all the basic stuff that I usually forget how
 to do and I always find myself searching online over and over for the same questions.
+
+## Create venv
+
+Useful if you want to manage python packages using pip instead of your default package manager.
+
+You can create `.python-venv` in your home folder and then use the `venv` module to create the virtual environment:
+
+```shell
+python -m venv $HOME/.python-venv/
+```
+
+Then you can activate the environment using:
+
+```shell
+source $HOME/.python-venv/bin/activate
+```
+
+To make things easy you can crate an alias in your `.bashrc` or `.zshrc` or whatever. I added the following line:
+
+```shell
+alias python-venv = "source $HOME/.python-venv/bin/activate"
+```
+
 ## OS library
 
 Some basic operations to manage files and directories.

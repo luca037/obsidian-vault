@@ -2,5 +2,8 @@
   "theme": "obsidian",
   "cssTheme": "Typewriter",
   "monospaceFontFamily": "Source Code Pro",
-  "baseFontSize": 18
+  "baseFontSize": 18,
+  "enabledCssSnippets": [
+    "center_img"
+  ]
 }
