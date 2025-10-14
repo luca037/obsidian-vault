@@ -162,7 +162,7 @@ public:
         // Init timer: causes the 'timer_callback 
         // to be executed every 500ms (twice a second).
         timer_ = this->create_wall_timer(
-	        500ms, timer_callbac
+	        500ms, timer_callback
 	    );
     }
 

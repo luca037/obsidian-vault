@@ -25,7 +25,7 @@ Our custom message will have only a single field called `num` whose type is `int
 Finally we need to modify the `CMakeList.txt`:
 
 ```cmake
-find_package(geometry_msgs REQUIRED)
+#find_package(geometry_msgs REQUIRED) (not needed)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -61,7 +61,7 @@ the output should be `int64 num`.
 
 ### Test the new interface
 
-First add to `package.xml`
+`cd` into the `cpp_pubsub` package.  Then add to `package.xml`
 
 ```xml
 <depend>tutorial_interfaces</depend>
@@ -177,6 +177,34 @@ int main(int argc, char * argv[]) {
     rclcpp::shutdown();
     return 0;
 }
+```
+
+Modify `CMakeList.txt` with:
+
+```cmake
+#...
+
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(tutorial_interfaces REQUIRED) # CHANGE
+
+add_executable(talker src/publisher_member_function.cpp)
+
+# CHANGE
+ament_target_dependencies(talker rclcpp tutorial_interfaces)   
+
+add_executable(listener src/subscriber_member_function.cpp)
+
+# CHANGE
+ament_target_dependencies(listener rclcpp tutorial_interfaces) 
+
+install(TARGETS
+  talker
+  listener
+  DESTINATION lib/${PROJECT_NAME})
+
+ament_package()
+
 ```
 
 Finally compile with:
