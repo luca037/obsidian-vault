@@ -212,3 +212,5 @@ Finally compile with:
  ```shell
  colcon build --packages-select cpp_pubsub
  ```
+
+Another example based on publisher/subscriber can be found at [[Homework 1]].
