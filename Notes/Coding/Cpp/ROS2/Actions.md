@@ -74,9 +74,10 @@ First we create the package:
 
 ```shell
 ros2 pkg create \
---dependencies custom_action_interfaces rclcpp 
+--dependencies custom_action_interfaces rclcpp \
 rclcpp_action  rclcpp_components \
---license Apache-2.0 -- custom_action_cpp
+--license Apache-2.0 \
+-- custom_action_cpp
 ```
 
 **Note**: we have added all the necessary dependencies with `--denepdencies` so we don't have to manually edit `package.xml`
@@ -169,7 +170,7 @@ public:
 	) {
         using namespace std::placeholders;
 
-        // Function to handle the goal -> accept it.
+        // Function to handle the goal.
         // Just accept all new goals.
         auto handle_goal = 
             [this](
@@ -447,7 +448,7 @@ public:
                 else
                     RCLCPP_INFO(
 	                    this->get_logger(), 
-	                    "Goal accepted by server,
+	                    "Goal accepted by server,"
 	                    "waiting for result"
 	                );
             };
