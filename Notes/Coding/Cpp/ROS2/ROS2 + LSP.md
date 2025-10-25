@@ -6,8 +6,7 @@ Add default mixins files:
 
 ```shell
 colcon mixin add default \
-"https://raw.githubusercontent.com/colcon/colcon-mixin-
-repository/master/index.yaml"
+"https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml"
 ```
 
 Fetch them:

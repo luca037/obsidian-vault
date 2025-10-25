@@ -566,3 +566,8 @@ colcon build
 ros2 run custom_action_cpp fibonacci_action_server
 ros2 run custom_action_cpp fibonacci_action_client
 ```
+
+
+## Extra example
+
+Another example can be found at [[Homework 2]]. The structure is very similar to the one seen for Fibonacci.
