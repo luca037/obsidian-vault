@@ -47,12 +47,15 @@ namespace vacuum_charger {
 class VacuumActionServer: public rclcpp::Node {
 public:
 
-    using Charging = vacuum_action_interfaces::action::Charging;
-    using GoalHandleCharging = rclcpp_action::ServerGoalHandle<Charging>;
+    using Charging = 
+	    vacuum_action_interfaces::action::Charging;
+    using GoalHandleCharging = 
+	    rclcpp_action::ServerGoalHandle<Charging>;
 
     CUSTOM_ACTION_CPP_PUBLIC
     explicit VacuumActionServer(
-		const rclcpp::NodeOptions& options=rclcpp::NodeOptions()
+			const rclcpp::NodeOptions&
+			options=rclcpp::NodeOptions()
     ) : Node( "vacuum_action_server", options) {
         using namespace std::placeholders;
 
@@ -89,7 +92,9 @@ public:
         // Start processing the goal.
         auto handle_accepted = 
             [this](
-	            const std::shared_ptr<GoalHandleCharging> goal_handle
+	            const 
+	            std::shared_ptr<GoalHandleCharging> 
+		        goal_handle
 	        ) {
                 auto execute_in_thread = 
                     [this, goal_handle]() {
@@ -122,12 +127,14 @@ private:
         const uint power = goal->power;
 
         // Define feedback.
-        auto feedback = std::make_shared<Charging::Feedback>();
+        auto feedback = 
+	        std::make_shared<Charging::Feedback>();
         // Init current battery: random between 0-8.
         feedback->curr_battery = rand() % 8;
 
         // Define the result object.
-        auto result = std::make_shared<Charging::Result>();
+        auto result = 
+	        std::make_shared<Charging::Result>();
 
         // Compute the next element in Charging sequence.
         const uint final_power = 
@@ -140,17 +147,23 @@ private:
         auto publish_callback_lambda =
             [this, goal_handle, feedback]() {
                 goal_handle->publish_feedback(feedback);
-                RCLCPP_INFO(this->get_logger(),"Publish feedback");
+                RCLCPP_INFO(
+	                this->get_logger(),
+	                "Publish feedback"
+	            );
             };
 
-        rclcpp::TimerBase::SharedPtr timer = this->create_wall_timer(
-            std::chrono::seconds(1), // Update feedback every second.
+        rclcpp::TimerBase::SharedPtr timer = 
+        this->create_wall_timer(
+            // Update  feedback every second.
+            std::chrono::seconds(1), 
             publish_callback_lambda
         );
 
         RCLCPP_INFO(
             this->get_logger(),
-            "Executing goal...\n\tstarting level: %u, final level: %u",
+            "Executing goal...\n\tstarting level:"
+            " %u, final level: %u",
             feedback->curr_battery, final_power
         );
 
@@ -162,7 +175,10 @@ private:
             if (goal_handle->is_canceling()) {
                 result->new_battery = feedback->curr_battery;
                 goal_handle->canceled(result);
-                RCLCPP_INFO(this->get_logger(), "Goal canceled");
+                RCLCPP_INFO(
+	                this->get_logger(),
+	                "Goal canceled"
+	            );
                 return;
             }
 
@@ -210,10 +226,14 @@ namespace vacuum_charger {
 
 class ChargerActionClient: public rclcpp::Node {
 public:
-    using Charging = vacuum_action_interfaces::action::Charging;
-    using GoalHandleCharging = rclcpp_action::ClientGoalHandle<Charging>;
+    using Charging = 
+	    vacuum_action_interfaces::action::Charging;
+    using GoalHandleCharging = 
+	    rclcpp_action::ClientGoalHandle<Charging>;
 
-    explicit ChargerActionClient(const rclcpp::NodeOptions& options)
+    explicit ChargerActionClient(
+	    const rclcpp::NodeOptions& options
+	)
     : Node("charger_action_client", options) {
         // Define an action client.
         this->client_ptr_ = 
@@ -259,7 +279,10 @@ public:
         
         // ### Response callback ###.
         send_goal_options.goal_response_callback = 
-            [this](const GoalHandleCharging::SharedPtr& goal_handle) {
+            [this](
+	            const GoalHandleCharging::SharedPtr& 
+		            goal_handle
+		    ) {
                 if (!goal_handle)
                     RCLCPP_ERROR(
 	                    this->get_logger(),
@@ -277,19 +300,23 @@ public:
         send_goal_options.feedback_callback = 
             [this](
                 GoalHandleCharging::SharedPtr,
-                const std::shared_ptr<const Charging::Feedback> feedback
+                const std::shared_ptr
+                <const Charging::Feedback>
+                feedback
             ) {
                 // Log current battery of vacuum.
                 RCLCPP_INFO(
 	                this->get_logger(),
-                    "Current battery level: %u", feedback->curr_battery
+                    "Current battery level: %u",
+                    feedback->curr_battery
 	            );
             };
 
         // ### Result callback ###.
         send_goal_options.result_callback = 
             [this](
-	            const GoalHandleCharging::WrappedResult& result
+	            const 
+	            GoalHandleCharging::WrappedResult& result
 	        ) {
                 switch (result.code) {
                 case rclcpp_action::ResultCode::SUCCEEDED:
@@ -316,13 +343,17 @@ public:
                 // Log result received.
                 RCLCPP_INFO(
 	                this->get_logger(),
-                    "Final battery level: %u", result.result->new_battery
+                    "Final battery level: %u",
+                    result.result->new_battery
                 );
                 rclcpp::shutdown();
             };
 
         // Send goal to the server.
-        this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
+        this->client_ptr_->async_send_goal(
+	        goal_msg,
+	        send_goal_options
+	    );
     }
 
 private:
