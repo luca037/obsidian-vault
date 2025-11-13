@@ -25,7 +25,6 @@ Our custom message will have only a single field called `num` whose type is `int
 Finally we need to modify the `CMakeList.txt`:
 
 ```cmake
-#find_package(geometry_msgs REQUIRED) (not needed)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}

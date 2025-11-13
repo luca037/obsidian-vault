@@ -2,3 +2,5 @@
 - [[ROS2 + LSP]]
 - [[Custom msg]]
 - [[Actions]]
+- [[Bags and rviz2]]
+- [[Services]]
