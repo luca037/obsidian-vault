@@ -185,3 +185,7 @@ install(TARGETS
 
 ament_package()
 ```
+
+## Extra example
+
+You can find an example in which we've used a service in [[Homework 4]]

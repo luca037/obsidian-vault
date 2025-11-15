@@ -228,8 +228,8 @@ public:
         std::string topic_name = "topic"; 
         // Max number of message in the buffer.
         const int queue_size = 10; 
-        subscription_ =
-            this->create_subscription<std_msgs::msg::String>(
+e       subscription_ =
+            - [ ] thfda ;lkjadsf;lks->create_subscription<std_msgs::msg::String>(
                 topic_name, queue_size, topic_callback
             );
     }
